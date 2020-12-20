@@ -26,7 +26,8 @@ when my norns shield arrived in the mail, i followed [this guide](https://monome
 # stopping to tinker
 i found devine's tutorial to be extremely helpful in learning a lot about many basic norns ideas, but wanted to understand more about the norns using the exercise i try to take in in audio environments that are new to me- building a one button sampler as simply as possible. i take this idea from the first couple microcontroller development boards i encountered, where the first program usually was to write code that makes an LED blink, and then uses a button to trigger an LED going on and off.
 
-directly after i started planning the high-minded idea, i realized that i could use this as a chance to make a bongocat play the drums. so i did that.
+directly after i started planning the high-minded idea, i realized that i could use this as a chance to make a bongocat play the drums. 
+so i did that.
 
 TODO
 - [ ] make a button press display text
