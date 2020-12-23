@@ -30,6 +30,12 @@ directly after i started planning the high-minded idea, i realized that i could 
 
 so i did that.
 
+## so, we do this
+before i began programming, i thought out a list of things i would like my script to do. the list was
+- [ ] press a button, make a drum sound
+- [ ] left and right paw make different sound
+- [ ] display a different image when a sound is triggered
+
 TODO
 - [ ] make a button press display text
 - [ ] put one drum on softcut
