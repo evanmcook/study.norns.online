@@ -2,7 +2,7 @@
 layout: post
 title: "hello norns"
 author: "@evancook.audio"
-date: 2020-12-20
+date: 2020-12-27
 ---
 for many years, i've seen and wondered about monome hardware, but either could not understand *what exactly was going on over there* because of my own progress in understanding audio, or could not afford to participate once i progressed my understanding further.
 
@@ -31,6 +31,60 @@ directly after i started planning the high-minded idea, i realized that i could 
 so i did that.
 
 ## so, we do this
+my project started off as [devine's lesson on interactions](https://github.com/neauoire/tutorial/blob/master/3_interaction.lua), from which i was able to discern how to read and react to button presses. by putting a png in the same norns directory as the lua script, i was able to display the png on the screen with `screen.display_png()`.
+through iteration, i re-wrote the `redraw()` method to display a different image depending on which combination of buttons were pressed. 
+
+in the `init()` function, `two` and `three` are boolean variables that both are declared to be false, which means that with no keys pressed, the script displays `catUp.png`.
+
+```function redraw()
+  screen.clear()
+  
+  --if both key 2 and key 3 are pressed, display the image with both paws down
+  --also print that both keys are pressed
+  if two and three then
+    screen.display_png("/home/we/dust/code/fellllllll/catBoth.png", 0, 0)
+    print('both on')
+    
+  --elseif key 3 is pressed, display the image with the right paw down
+  elseif three and not two then
+  --if mode == 1 then
+    screen.display_png("/home/we/dust/code/fellllllll/catRight.png", 0, 0)
+    
+  --else if no key is pressed, display the image with the both paws up
+  
+  elseif not two and not three then
+    screen.clear()
+    screen.display_png("/home/we/dust/code/fellllllll/catUp.png", 0, 0)
+    
+  elseif two then
+  --else if key 2 is pressed, display the image with the left paw down
+    screen.display_png("/home/we/dust/code/fellllllll/catLeft.png", 0, 0)
+  
+  end
+  screen.update()
+end```
+
+really, this was what i was most interested in doing. but in the spirit of using this new sound computer as a computer to produce sound, i began trying to add an audio element.
+
+thus began my adventure in understanding softcut.
+
+## softcut, made hard, and then easier
+while softcut is perhaps not the best way of playing one-shot samples, setting it up to do so on the scale i was working at seemed exceptionally easy.
+i copied the boilerplate initialization from [the first section of the softcut studies](https://monome.org/docs/norns/softcut/), and was able to make audio happen on a keypress!
+however, when i returned to continue work the next day, i could not make my feline comrade produce audio unless i started the awake script before switching to my own.
+
+after consulting the [softcut API](https://monome.org/docs/norns/api/modules/softcut.html), i was still stumped.
+
+-- i should also describe how `key()` works somewhere in here.
+
+unsure what was happening, i asked in the norns discord for help, and included that starting awake solved my problem.
+as i was told, my issue stemmed from copying only the text from the softcut study link above, leading me to disregard an important feature in softcut: the playback rate.
+by default, the playback rate of softcut is set to 0. so, softcut was indeed being triggered, but it was playing back at a rate of 0, which is inaudible.
+by adding `softcut.rate(1, 1)` to my `function init()`, i was able once again to output audio.
+
+## takeaways
+
+then, i wrote a 
 before i began programming, i thought out a list of things i would like my script to do. the list was
 - [ ] press a button, make a drum sound
 - [ ] left and right paw make different sound
