@@ -30,7 +30,7 @@ directly after i started planning the high-minded idea, i realized that i could 
 
 so i did that.
 
-## so, we do this
+### so, we do this
 my project started off as [devine's lesson on interactions](https://github.com/neauoire/tutorial/blob/master/3_interaction.lua), from which i was able to discern how to read and react to button presses. by putting a png in the same norns directory as the lua script, i was able to display the png on the screen with `screen.display_png()`.
 through iteration, i re-wrote the `redraw()` method to display a different image depending on which combination of buttons were pressed. 
 
@@ -69,7 +69,7 @@ really, this was what i was most interested in doing. but in the spirit of using
 
 thus began my adventure in understanding softcut.
 
-## softcut, made hard, and then easier
+### softcut, made hard, and then easier
 while softcut is perhaps not the best way of playing one-shot samples, setting it up to do so on the scale i was working at seemed exceptionally easy.
 i copied the boilerplate initialization from [the first section of the softcut studies](https://monome.org/docs/norns/softcut/), and was able to make audio happen on a keypress!
 however, when i returned to continue work the next day, i could not make my feline comrade produce audio unless i started the awake script before switching to my own.
@@ -83,7 +83,7 @@ as i was told, my issue stemmed from copying only the text from the softcut stud
 by default, the playback rate of softcut is set to 0. so, softcut was indeed being triggered, but it was playing back at a rate of 0, which is inaudible.
 by adding `softcut.rate(1, 1)` to my `function init()`, i was able once again to output audio.
 
-## takeaways
+### takeaways
 
 then, i wrote a 
 before i began programming, i thought out a list of things i would like my script to do. the list was
