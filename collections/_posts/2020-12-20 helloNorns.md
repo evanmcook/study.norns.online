@@ -62,7 +62,8 @@ in the `init()` function, `two` and `three` are boolean variables that both are 
   
   end
   screen.update()
-end```
+end
+```
 
 really, this was what i was most interested in doing. but in the spirit of using this new sound computer as a computer to produce sound, i began trying to add an audio element.
 
